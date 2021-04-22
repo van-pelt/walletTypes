@@ -1,37 +1,24 @@
 package types
 
 const (
-	StatusOk        Status = "OK"
-	StatusFail      Status = "FAIL"
-	StatusInProgres Status = "INPROGRESS"
+	StatusOk        PaymentStatus = "OK"
+	StatusFail      PaymentStatus = "FAIL"
+	StatusInProgres PaymentStatus = "INPROGRESS"
 )
 
-type Currency string
-type Category string
-type Money int
-type Status string
-type Card struct {
-	ID          int
-	PAN         string
-	Balance     Money
-	MinBalance  Money
-	Currency    Currency
-	Color       string
-	Name        string
-	Active      bool
-	MyInterface interface{}
-	Status      string
-}
+type PaymentCategory string
+type PaymentStatus string
+type Money int64
+type Phone string
 
 type Payment struct {
-	ID       int
+	ID       string
 	Amount   Money
-	Category Category
-	Status   Status
+	Category PaymentCategory
+	Status   PaymentStatus
 }
-
-type PaymentSource struct {
-	Type    string
-	Number  string
+type Account struct {
+	ID      int64
+	Phone   Phone
 	Balance Money
 }
