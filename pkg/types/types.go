@@ -12,10 +12,11 @@ type Money int64
 type Phone string
 
 type Payment struct {
-	ID       string
-	Amount   Money
-	Category PaymentCategory
-	Status   PaymentStatus
+	ID        string
+	AccountID int64
+	Amount    Money
+	Category  PaymentCategory
+	Status    PaymentStatus
 }
 type Account struct {
 	ID      int64
