@@ -35,6 +35,6 @@ type Favorite struct {
 	Category  PaymentCategory
 }
 
-func (a *Account) toString() string {
+func (a *Account) ToString() string {
 	return fmt.Sprintf("%d;%s;%d|", a.ID, a.Phone, a.Balance)
 }
