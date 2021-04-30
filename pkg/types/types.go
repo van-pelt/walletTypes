@@ -39,14 +39,14 @@ func (a *Account) ToString() string {
 	return fmt.Sprintf("%d;%s;%d|", a.ID, a.Phone, a.Balance)
 }
 
-func (a *Account) ToDump() string {
+func (a *Account) String() string {
 	return fmt.Sprintf("%d;%s;%d\n", a.ID, a.Phone, a.Balance)
 }
 
-func (f *Favorite) ToDump() string {
+func (f *Favorite) String() string {
 	return fmt.Sprintf("%s;%d;%s;%d;%s\n", f.ID, f.AccountID, f.Name, f.Amount, f.Category)
 }
 
-func (p *Payment) ToDump() string {
+func (p *Payment) String() string {
 	return fmt.Sprintf("%s;%d;%d;%s;%s\n", p.ID, p.AccountID, p.Amount, p.Category, p.Status)
 }
