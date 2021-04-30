@@ -1,5 +1,9 @@
 package types
 
+import (
+	"fmt"
+)
+
 const (
 	StatusOk        PaymentStatus = "OK"
 	StatusFail      PaymentStatus = "FAIL"
@@ -29,4 +33,8 @@ type Favorite struct {
 	Name      string
 	Amount    Money
 	Category  PaymentCategory
+}
+
+func (a *Account) toString() string {
+	return fmt.Sprintf("%d;%s;%d|", a.ID, a.Phone, a.Balance)
 }
