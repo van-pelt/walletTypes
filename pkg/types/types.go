@@ -2,6 +2,7 @@ package types
 
 import (
 	"fmt"
+	"strings"
 )
 
 const (
@@ -36,5 +37,5 @@ type Favorite struct {
 }
 
 func (a *Account) ToString() string {
-	return fmt.Sprintf("%d;%s;%d|", a.ID, a.Phone, a.Balance)
+	return strings.TrimSuffix(fmt.Sprintf("%d;%s;%d|", a.ID, a.Phone, a.Balance), "|")
 }
