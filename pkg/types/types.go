@@ -38,3 +38,15 @@ type Favorite struct {
 func (a *Account) ToString() string {
 	return fmt.Sprintf("%d;%s;%d|", a.ID, a.Phone, a.Balance)
 }
+
+func (a *Account) ToDump() string {
+	return fmt.Sprintf("%d;%s;%d\n", a.ID, a.Phone, a.Balance)
+}
+
+func (f *Favorite) ToDump() string {
+	return fmt.Sprintf("%s;%d;%s;%d;%s\n", f.ID, f.AccountID, f.Name, f.Amount, f.Category)
+}
+
+func (p *Payment) ToDump() string {
+	return fmt.Sprintf("%s;%d;%d;%s;%s\n", p.ID, p.AccountID, p.Amount, p.Category, p.Status)
+}
