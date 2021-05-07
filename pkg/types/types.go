@@ -56,26 +56,26 @@ func (p *Payment) String() string {
 	return fmt.Sprintf("%s;%d;%d;%s;%s\n", p.ID, p.AccountID, p.Amount, p.Category, p.Status)
 }
 
-func (pi *PayToDump) ToDump() (str string) {
+func (pi *PayToDump) ToDump() string {
+	var str string
 	for _, c := range *pi {
 		str += c.String()
 	}
-	str = strings.TrimSuffix(str, "\n")
-	return
+	return strings.TrimSuffix(str, "\n")
 }
 
-func (ac *AccToDump) ToDump() (str string) {
+func (ac *AccToDump) ToDump() string {
+	var str string
 	for _, c := range *ac {
 		str += c.String()
 	}
-	str = strings.TrimSuffix(str, "\n")
-	return
+	return strings.TrimSuffix(str, "\n")
 }
 
-func (fv *FavToDump) ToDump() (str string) {
+func (fv *FavToDump) ToDump() string {
+	var str string
 	for _, c := range *fv {
 		str += c.String()
 	}
-	str = strings.TrimSuffix(str, "\n")
-	return
+	return strings.TrimSuffix(str, "\n")
 }
