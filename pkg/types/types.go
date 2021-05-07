@@ -2,6 +2,7 @@ package types
 
 import (
 	"fmt"
+	"strings"
 )
 
 const (
@@ -14,6 +15,10 @@ type PaymentCategory string
 type PaymentStatus string
 type Money int64
 type Phone string
+
+type PayToDump []*Payment
+type AccToDump []*Account
+type FavToDump []*Favorite
 
 type Payment struct {
 	ID        string
@@ -49,4 +54,28 @@ func (f *Favorite) String() string {
 
 func (p *Payment) String() string {
 	return fmt.Sprintf("%s;%d;%d;%s;%s\n", p.ID, p.AccountID, p.Amount, p.Category, p.Status)
+}
+
+func (pi *PayToDump) ToDump() (str string) {
+	for _, c := range *pi {
+		str += c.String()
+	}
+	str = strings.TrimSuffix(str, "\n")
+	return
+}
+
+func (ac *AccToDump) ToDump() (str string) {
+	for _, c := range *ac {
+		str += c.String()
+	}
+	str = strings.TrimSuffix(str, "\n")
+	return
+}
+
+func (fv *FavToDump) ToDump() (str string) {
+	for _, c := range *fv {
+		str += c.String()
+	}
+	str = strings.TrimSuffix(str, "\n")
+	return
 }
